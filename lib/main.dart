@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(),
       home: const MyHomePage(title: 'Colors App'),
       routes: {
+        '/home': (context) => const HomePage(),
         '/shades': (context) => const ShadesPageWithParams(),
         '/color_picker': (context) => const ColorPicker()
       },
