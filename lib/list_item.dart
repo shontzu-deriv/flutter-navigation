@@ -7,7 +7,6 @@ class ListItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Colors.accents;
 
     return Container(
       height: 100,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigation/home_page.dart';
+import 'package:flutter_navigation/shades_with_params.dart';
+import 'color_picker.dart';
 
 const accents = [100, 200, 400, 700];
 
@@ -17,6 +19,14 @@ class MyApp extends StatelessWidget {
       title: 'Colors App',
       theme: ThemeData(),
       home: const MyHomePage(title: 'Colors App'),
+      routes: {
+        '/shades': (context) => const ShadesPageWithParams(),
+        '/color_picker': (context) => const ColorPicker()
+      },
+      // method 2: onGenerateRoute: () {switch case}
+      // onGenerateInitialRoutes: (settings) {
+      //   switch(settings.name) {}
+      // },
     );
   }
 }

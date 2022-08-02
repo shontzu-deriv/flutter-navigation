@@ -9,11 +9,20 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-// SYNTAX: Navigator.push(context, route)
+// NAVIGATOR NAVIGATION
+// void navigateToShadesPage(BuildContext context, MaterialAccentColor color) {
+//   Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+//     return ShadesPage(color: color);
+//   }));
+// }
+
+// ROUTER NAVIGATION
 void navigateToShadesPage(BuildContext context, MaterialAccentColor color) {
-  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
-    return ShadesPage(color: color);
-  }));
+  Navigator.of(context).pushNamed('/shades', arguments: color);
+}
+
+void navigateToColorPicker(BuildContext context) {
+  Navigator.of(context).pushNamed('/color_picker');
 }
 
 class _HomePageState extends State<HomePage> {
@@ -36,6 +45,13 @@ class _HomePageState extends State<HomePage> {
               child: ListItems(color: Colors.accents.elementAt(index)),
             );
           }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          navigateToColorPicker(context);
+        },
+        tooltip: "null",
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
